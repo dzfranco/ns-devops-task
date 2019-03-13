@@ -12,7 +12,7 @@ const setupServer = async () => {
 	bar.tick();
 	await server.connectToDatabase();
 	console.log('Running migrations');
-	await server.runMigrations();
+	await server.runTask();
 	bar.tick();
 	process.exit();
 };
