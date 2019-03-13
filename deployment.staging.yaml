@@ -1,0 +1,46 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+    labels:
+        workload.user.cattle.io/workloadselector: deployment-staging-mfa-migrations
+    name: mfa-migrations
+    namespace: staging
+spec:
+    concurrencyPolicy: Allow
+    failedJobsHistoryLimit: 10
+    jobTemplate:
+        metadata:
+            creationTimestamp: null
+        spec:
+            template:
+                metadata:
+                    annotations:
+                        cattle.io/timestamp: 2019-02-07T20:41:21.000Z
+                        field.cattle.io/ports: '[null]'
+                    creationTimestamp: null
+                spec:
+                    containers:
+                        - image: nearby/mfa-migrations:stg-${CICD_GIT_COMMIT}
+                          imagePullPolicy: Always
+                          name: mfa-migrations
+                          resources: {}
+                          securityContext:
+                              allowPrivilegeEscalation: false
+                              capabilities: {}
+                              privileged: false
+                              readOnlyRootFilesystem: false
+                              runAsNonRoot: false
+                          stdin: true
+                          terminationMessagePath: /dev/termination-log
+                          terminationMessagePolicy: File
+                          tty: true
+                    dnsPolicy: ClusterFirst
+                    imagePullSecrets:
+                        - name: heynearby
+                    restartPolicy: Never
+                    schedulerName: default-scheduler
+                    securityContext: {}
+                    terminationGracePeriodSeconds: 30
+    schedule: 00 * * * *
+    successfulJobsHistoryLimit: 10
+    suspend: false

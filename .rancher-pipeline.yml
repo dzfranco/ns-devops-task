@@ -1,0 +1,38 @@
+stages:
+- name: build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Docker/production.dockerfile
+      buildContext: .
+      tag: nearby/mfa-migrations:prod-${CICD_GIT_COMMIT}
+      pushRemote: true
+      registry: index.docker.io
+    when:
+      branch:
+        include:
+        - master
+  - publishImageConfig:
+      dockerfilePath: ./Docker/staging.dockerfile
+      buildContext: .
+      tag: nearby/mfa-migrations:stg-${CICD_GIT_COMMIT}
+      pushRemote: true
+      registry: index.docker.io
+    when:
+      branch:
+        include:
+        - staging
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+    when:
+      branch:
+        include:
+        - master
+  - applyYamlConfig:
+      path: ./deployment.staging.yaml
+    when:
+      branch:
+        include:
+        - staging
+timeout: 60

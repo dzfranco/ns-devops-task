@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+    mongo_db:
+        image: mongo
+        ports:
+            - '27017:27017'
+    api:
+        ports:
+            - '5858:5858'
+        build:
+            context: .
+        restart: always
+        depends_on:
+            - mongo_db
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www:cached
+        logging:
+            options:
+                max-size: '10m'
+                max-file: '10'
+        command: yarn run dev
