@@ -1,16 +1,11 @@
-FROM node:carbon
+FROM node
 
-# Create app directory
-RUN mkdir -p /var/www
-RUN mkdir -p /var/www/logs
-WORKDIR /var/www
+# You need to create the /var/www dir
+# and set it as the workdir
 
-# Install yarn
 RUN npm install -g yarn
-
-# Install app dependencies
 RUN yarn install
 
+# Expose the ports
 
-EXPOSE 3000 3001
 CMD [ "node", "main" ]
