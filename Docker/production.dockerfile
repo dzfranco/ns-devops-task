@@ -15,7 +15,6 @@ COPY ./ /var/www/
 RUN yarn install --pure-lockfile
 RUN yarn compile-native:prod
 COPY package.json var/www/build
-#RUN mv /var/www/build/.staging.env /var/www/build/.staging.env
 
 
 #Layer 2, copy the project files and run
