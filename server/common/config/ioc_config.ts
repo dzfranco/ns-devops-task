@@ -2,6 +2,8 @@ import { Container } from 'inversify';
 
 import 'reflect-metadata';
 
+import '../../api/controllers/occupation.controller';
+
 import { ILogger, IMetrics } from '../interfaces';
 import { LogService, MetricsService } from '../services';
 import { SERVICE_IDENTIFIER, PERSISTENCE_IDENTIFIERS } from '../constants/identifiers';

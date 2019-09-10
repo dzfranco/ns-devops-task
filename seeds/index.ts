@@ -2,6 +2,8 @@ import * as path from 'path';
 
 import { Seeder } from 'mongo-seeding';
 import { ENVIRONMENTS } from '../server/common/constants/environments';
+import { configureEnv } from '../server/common/env';
+configureEnv();
 
 let config;
 if (process.env.NODE_ENV === ENVIRONMENTS.DEVELOPMENT) {

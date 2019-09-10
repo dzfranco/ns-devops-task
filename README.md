@@ -27,7 +27,7 @@ This project depends on MongoDB to work and developers need their own local copy
 
 * Change the URL to respond to a DocumentDB database in AWS
 * Make the backend scale by 3 replicas and run behind [HAProxy](https://hub.docker.com/r/eeacms/haproxy/)
-  * Extra bonus if you can explain the architecture
+  * Extra bonus if you can explain the architecture and what HAProxy is doing
 * Build your own production Docker image that uses only the compiled code.
   * The script to build the code is `npm compile-native:prod`
   * The script creates a code to the `build` folder
