@@ -1,4 +1,4 @@
-FROM node:carbon AS build
+FROM node:carbon AS build_layer
 
 # Create app directory
 RUN mkdir -p /var/www
@@ -19,10 +19,13 @@ COPY package.json var/www/build
 
 #Layer 2, copy the project files and run
 FROM node:carbon
-# Copy from previous layer
-COPY --from=build /var/www/build  /var/www/
-COPY --from=build /var/www/node_modules /var/www/node_modules
+
+# Tell the guy to make copies from this layers
+COPY --from=build_layer /var/www/build  /var/www/
+COPY --from=build_layer /var/www/node_modules /var/www/node_modules
 WORKDIR /var/www
+
+
 
 #SET NODE ENV
 ENV NODE_ENV=production
