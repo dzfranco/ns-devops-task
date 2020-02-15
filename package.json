@@ -114,7 +114,7 @@
 		"swagger-ui-express": "4.0.1",
 		"type-graphql": "^0.15.0",
 		"yamljs": "0.3.0",
-		"yarn": "1.12.1"
+		"yarn": "1.22.0"
 	},
 	"peerDependencies": {
 		"graphql": "0.13.2 || 14.0.0"
