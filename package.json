@@ -70,7 +70,7 @@
 		"body-parser": "1.18.3",
 		"brakes": "2.6.0",
 		"casual": "1.5.19",
-		"class-transformer": "^0.2.0",
+		"class-transformer": "^0.3.1",
 		"class-validator": "0.9.1",
 		"compression": "1.7.3",
 		"cookie-parser": "1.4.3",
