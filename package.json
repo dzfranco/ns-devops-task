@@ -99,7 +99,7 @@
 		"mongo-seeding": "^3.0.0",
 		"mongodb-memory-server": "^2.7.2",
 		"mongoose": "^5.3.14",
-		"node-fetch": "2.2.0",
+		"node-fetch": "2.6.7",
 		"pino": "5.8.0",
 		"progress": "2.0.1",
 		"prom-client": "11.1.3",
