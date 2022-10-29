@@ -134,7 +134,7 @@
 		"graphql-tester": "0.0.5",
 		"jest": "23.6.0",
 		"jest-sonar-reporter": "2.0.0",
-		"nodejs-dashboard": "0.4.3",
+		"nodejs-dashboard": "0.5.1",
 		"prettier": "1.14.3",
 		"restify-errors": "6.1.1",
 		"shelljs": "0.8.2",
