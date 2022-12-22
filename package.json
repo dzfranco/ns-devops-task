@@ -94,7 +94,7 @@
 		"inversify": "5.0.1",
 		"inversify-express-utils": "6.2.0",
 		"iridium": "7.2.5",
-		"jsonwebtoken": "8.3.0",
+		"jsonwebtoken": "9.0.0",
 		"lodash": "4.17.11",
 		"mongo-seeding": "^3.0.0",
 		"mongodb-memory-server": "^2.7.2",
