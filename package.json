@@ -71,7 +71,7 @@
 		"brakes": "2.6.0",
 		"casual": "1.5.19",
 		"class-transformer": "^0.2.0",
-		"class-validator": "0.9.1",
+		"class-validator": "0.14.0",
 		"compression": "1.7.3",
 		"cookie-parser": "1.4.3",
 		"cross-env": "5.2.0",
